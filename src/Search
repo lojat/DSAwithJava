@@ -1,1 +1,32 @@
-
+// find sum of the 13 with one loop
+import java.util.*;
+class FindSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of element ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter elements ");
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int l = arr.length;
+        System.out.println("Enter sum ");
+        int sum= sc.nextInt();
+        int[] arr1= new int[sum+1];
+        int def= 0;
+        
+        for(int i =0;i<l;i++){
+            if(arr[i]<=sum){
+                def=sum-arr[i];
+                if(arr1[def]!=0)
+                {
+                    System.out.println(arr1[def]+" "+arr[i]);
+                }
+                else
+                   arr1[arr[i]]=arr[i];
+            }
+            
+        }
+    }
+}
