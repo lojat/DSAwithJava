@@ -33,7 +33,7 @@ public class SingleLinkedList {
 		list.insert(list, 2323);
 		list.insert(list, 784);
 		 
-		list.delete(list,98);
+		list.delete(list,784);
 		 
 		// print list
 		list.traversal(list);
@@ -41,7 +41,7 @@ public class SingleLinkedList {
 	}
 
 	// method to insert element
-	void insert(SingleLinkedList list, int data) {
+	SingleLinkedList insert(SingleLinkedList list, int data) {
 		// creating new node with data
 		Node newNode = new Node(data);
 
@@ -58,10 +58,11 @@ public class SingleLinkedList {
 				last = last.next;
 			last.next = newNode;
 		}
+		return list;
 	}
 
 	// method for delete node
-	void delete(SingleLinkedList list, int data) {
+	SingleLinkedList delete(SingleLinkedList list, int data) {
 		//check if list is empty
 		if (list.head == null) {
 			System.out.println("Deletion faild Empty linked list!");
@@ -89,6 +90,8 @@ public class SingleLinkedList {
 				System.out.println("Data not Found!");
 			}
 		}
+		
+		return list;
 	}
 
 	// method for print linked list

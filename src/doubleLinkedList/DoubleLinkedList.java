@@ -45,7 +45,7 @@ public class DoubleLinkedList {
 	}
 
 	//insert Method
-	void insert(DoubleLinkedList list, String data) {
+	DoubleLinkedList insert(DoubleLinkedList list, String data) {
 		Node temp = new Node(data);
 		if (head == null) {
 			list.head = temp;
@@ -56,10 +56,12 @@ public class DoubleLinkedList {
 			tail = tail.next;
 		}
 		System.out.println(data + " Inserted");
+		
+		return list;
 	}
 
 	//delete Method
-	void delete(DoubleLinkedList list, String data) {
+	DoubleLinkedList delete(DoubleLinkedList list, String data) {
 		if (list.head == null) {
 			System.out.println("Deletion Failed Empty List!");
 		} else {
@@ -70,7 +72,7 @@ public class DoubleLinkedList {
 				list.tail = tail.prev;
 				list.tail.next = null;
 			} else {
-				Node temp1 = list.head.next, temp2 = list.tail.next;
+				Node temp1 = list.head.next, temp2 = list.tail.prev;
 				while (temp1.next != temp2 || temp1 != temp2) {
 					if (temp1.data == data) {
 						temp1.prev.next = temp1.next;
@@ -87,6 +89,8 @@ public class DoubleLinkedList {
 			}
 			System.out.println(data+" deleted!");
 		}
+		
+		return list;
 	}
 
 	//print Method
