@@ -22,7 +22,7 @@ public class BubbleSort {
 		System.out.print("Before Sorting: ");// print unsorted array
 		displayArray(arr);
 
-		ArrayList<Integer> sortArr = bubbleSort(arr);// calling sorting method
+		ArrayList<Integer> sortArr = bubbleSort1(arr);// calling sorting method
 
 		System.out.print("After Sorting: ");// print sorted array
 		displayArray(sortArr);
@@ -63,4 +63,23 @@ public class BubbleSort {
 		return arr;
 	}
 
+	
+	private static ArrayList<Integer> bubbleSort1(ArrayList<Integer> arr) {
+		
+		int n = arr.size();
+		
+		for(int i = 0 ; i < n ; i++ ) {
+			for(int j=1 ; j<n-i; j++) {
+				if(arr.get(j-1)>arr.get(j)) {
+					
+					int temp = arr.get(j-1);
+					arr.set(j-1, arr.get(j));
+					arr.set(j, temp);
+					
+				}
+			}
+		}
+		
+		return arr;
+	}
 }
